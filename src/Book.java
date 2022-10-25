@@ -1,32 +1,27 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
+public class Book extends Section{
 
-    List<String> paragraph = new ArrayList<String>();
-    List<String> image = new ArrayList<String>();
-    List<String> table = new ArrayList<String>();
-    public Book(String disco_titanic) {
+    private String title;
+    Author nume;
+
+    public Book(String title) {
+        super(title);
+        this.title = title;
 
     }
 
-    public void createNewParagraph(String s) {
-        paragraph.add(s);
-    }
 
-    public void createNewImage(String s) {
-        image.add(s);
-    }
 
-    public void createNewTable(String s) {
-        table.add(s);
-    }
-    public void print() {
 
-        paragraph.forEach(System.out::println);
-        image.forEach(System.out::println);
-        table.forEach(System.out::println);
-
+    public void addAuthor(Author nume) {
+//    element.add(nume);
     }
 
 }
+
+
+
+
+
