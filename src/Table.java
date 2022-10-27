@@ -9,7 +9,7 @@ public class Table implements Element {
 
 
     @Override
-    public void print() {
+    public Image print() {
         System.out.println("Title :" + table);
         Iterator<Element> it = element.iterator();
 
@@ -18,6 +18,7 @@ public class Table implements Element {
             elemente.print();
         }
 
+        return null;
     }
 
     @Override

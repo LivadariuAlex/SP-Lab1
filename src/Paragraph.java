@@ -13,7 +13,7 @@ public class Paragraph implements Element {
 
 
     @Override
-    public void print() {
+    public Image print() {
         System.out.println("Paragraph : " + text);
         Iterator<Element> it = element.iterator();
 
@@ -21,6 +21,7 @@ public class Paragraph implements Element {
             Element elemente = it.next();
             elemente.print();
         }
+        return null;
     }
 
     @Override

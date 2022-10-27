@@ -1,19 +1,25 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Image implements Element {
 
     List<Element> element = new ArrayList<Element>();
-    public Image(String image) {
-        this.image = image;
+    Image(String name) {
+        image = name;
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     private String image;
 
 
     @Override
-    public void print() {
+    public Image print() {
         System.out.println("Image with name: "+ image);
         Iterator<Element> it = element.iterator();
 
@@ -22,6 +28,7 @@ public class Image implements Element {
             elemente.print();
         }
 
+        return null;
     }
 
     @Override

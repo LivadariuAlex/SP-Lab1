@@ -17,7 +17,7 @@ public class Section implements Element{
     }
 
     @Override
-    public void print() {
+    public Image print() {
         System.out.println(getClass().getName() + ": " + getTitle());
 
         Iterator<Element> it = element.iterator();
@@ -26,6 +26,7 @@ public class Section implements Element{
             Element elemente = it.next();
             elemente.print();
         }
+        return null;
     }
 
     @Override
