@@ -13,13 +13,12 @@ public class ImageProxy implements  Element{
         if (realImage == null) {
             realImage = new Image(url);
         }
-        return realImage.print();
+        return realImage;
 
     }
     @Override
-    public Image print() {
+    public void print() {
         System.out.println(url);
-        return null;
     }
 
     @Override
@@ -40,6 +39,12 @@ public class ImageProxy implements  Element{
     @Override
     public Element get(int i) {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImageProxy(this);
+
     }
 
 }

@@ -19,16 +19,13 @@ public class Image implements Element {
 
 
     @Override
-    public Image print() {
+    public void print() {
         System.out.println("Image with name: "+ image);
-        Iterator<Element> it = element.iterator();
 
-        while (it.hasNext()) {
-            Element elemente = it.next();
+        for (Element elemente : element) {
             elemente.print();
         }
 
-        return null;
     }
 
     @Override
@@ -51,5 +48,10 @@ public class Image implements Element {
     @Override
     public Element get(int i) {
         return element.get(i);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImage(this);
     }
 }

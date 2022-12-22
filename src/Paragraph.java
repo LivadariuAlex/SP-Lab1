@@ -15,7 +15,7 @@ public class Paragraph implements Element {
 
 
     @Override
-    public Image print() {
+    public void print() {
         if(align!=null) {
             align.render(text, new Context());
         }
@@ -32,7 +32,6 @@ public class Paragraph implements Element {
 //            Element elemente = it.next();
 //            elemente.print();
 //        }
-        return null;
     }
 
     @Override
@@ -56,6 +55,11 @@ public class Paragraph implements Element {
     @Override
     public Element get(int i) {
         return element.get(i);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitParagraph(this);
     }
 
 

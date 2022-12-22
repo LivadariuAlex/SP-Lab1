@@ -7,9 +7,13 @@ public class Table implements Element {
     private String table;
     List<Element> element = new ArrayList<Element>();
 
+    public Table(String table) {
+        this.table = table;
+    }
+
 
     @Override
-    public Image print() {
+    public  void print() {
         System.out.println("Title :" + table);
         Iterator<Element> it = element.iterator();
 
@@ -18,7 +22,7 @@ public class Table implements Element {
             elemente.print();
         }
 
-        return null;
+
     }
 
     @Override
@@ -39,6 +43,11 @@ public class Table implements Element {
     @Override
     public Element get(int i) {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitTable(this);
     }
 }
 

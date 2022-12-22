@@ -17,16 +17,13 @@ public class Section implements Element{
     }
 
     @Override
-    public Image print() {
+    public void print() {
         System.out.println(getClass().getName() + ": " + getTitle());
 
-        Iterator<Element> it = element.iterator();
-
-        while (it.hasNext()) {
-            Element elemente = it.next();
+        for (Element elemente : element) {
             elemente.print();
         }
-        return null;
+
     }
 
     @Override
@@ -49,6 +46,13 @@ public class Section implements Element{
         return element.get(i);
     }
 
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitSection(this);
+        for(Element elemente:element) {
+            elemente.accept(visitor);
+        }
+    }
 
 
 }
